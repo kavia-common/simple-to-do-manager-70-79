@@ -1,0 +1,242 @@
+:root {
+  --color-bg-white: #ffffff;
+  --color-bg-grey: #d6d7ef;
+  --color-bg-primary: #9395d3;
+  --color-bg-dark: #8b8787;
+  --color-text-white: #ffffff;
+  --color-text-grey: #8b8787;
+  --color-text-black: #000000;
+  --color-label-primary: #9395d3;
+  --color-label-tertiary: #8b8787;
+  --color-shadow-main: 0 4px 4px 0 #000000;
+  --font-jost: 'Jost', sans-serif;
+  --font-size-small: 10px;
+  --font-size-medium: 16px;
+  --font-size-large: 24px;
+  --font-size-todo-title: 13px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --radius-default: 15px;
+  --radius-soft: 20px;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 15px;
+  --spacing-l: 20px;
+  --shadow-0: 0px 4px 4px rgba(0,0,0,0.16);
+}
+
+.pageContainer {
+  background: var(--color-bg-white);
+  color: var(--color-text-black);
+  font-family: var(--font-jost);
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.statusBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 44px;
+  width: 100%;
+  padding: 0 var(--spacing-s);
+  background: var(--color-bg-white);
+}
+
+.statusNotch {
+  width: 120px;
+  height: 30px;
+  margin-right: var(--spacing-m);
+}
+.statusIcons {
+  display: flex;
+  align-items: center;
+}
+.statusIcon {
+  width: 20px;
+  height: 14px;
+  margin-right: var(--spacing-xs);
+}
+.statusIndicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-label-primary);
+  margin-left: var(--spacing-s);
+}
+.statusTime {
+  margin-left: auto;
+  font-family: var(--font-jost);
+  font-size: var(--font-size-small);
+  color: var(--color-bg-dark);
+}
+
+/* APP BAR HEADER */
+.appBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg-primary);
+  height: 118px;
+  width: 100%;
+  border-radius: 0 0 var(--radius-default) var(--radius-default);
+  box-shadow: var(--shadow-0);
+  padding: 0 var(--spacing-l);
+}
+.calendarIcon {
+  width: 60px;
+  height: 60px;
+  margin-top: var(--spacing-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todoTitle {
+  font-family: var(--font-jost);
+  font-size: var(--font-size-large);
+  color: var(--color-text-white);
+  font-weight: var(--font-weight-bold);
+}
+
+/* NAVIGATION BAR / FILTER BAR */
+.navBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 68px;
+  width: 100%;
+  background: var(--color-bg-white);
+  box-shadow: var(--shadow-0);
+  margin-bottom: var(--spacing-m);
+  padding: 0 var(--spacing-l);
+  justify-content: space-between;
+}
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+}
+.navItemActive .navLabel {
+  color: var(--color-label-primary);
+  font-weight: var(--font-weight-bold);
+}
+.navLabel {
+  font-size: var(--font-size-small);
+  color: var(--color-label-tertiary);
+  font-family: var(--font-jost);
+}
+.navIcon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 3px;
+}
+.navIconPlaylist {
+}
+.navIconTick {
+}
+
+/* TODOS LIST CONTAINER */
+.todosList {
+  padding: 0 var(--spacing-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+/* INDIVIDUAL TODO CARD */
+.todoCard {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-m);
+  min-height: 82px;
+  margin-bottom: var(--spacing-m);
+}
+.todoTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.todoTitleMain {
+  font-size: var(--font-size-todo-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-label-primary);
+  margin-bottom: 2px;
+}
+.todoSubTitle {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-black);
+}
+.todoActions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-s);
+}
+.actionBtn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.actionBtnCheck {
+}
+.actionBtnDelete {
+}
+.actionBtnEdit {
+}
+
+/* FLOATING ADD BUTTON (FAB) */
+.fabAddTodo {
+  position: fixed;
+  bottom: var(--spacing-l);
+  right: var(--spacing-l);
+  width: 70px;
+  height: 70px;
+  background: var(--color-bg-primary);
+  color: var(--color-text-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.fabAddTodo:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.22);
+  transform: scale(1.05);
+}
+.fabPlusIcon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .appBar,
+  .navBar,
+  .todosList {
+    padding-left: var(--spacing-s);
+    padding-right: var(--spacing-s);
+  }
+  .fabAddTodo {
+    width: 54px;
+    height: 54px;
+  }
+}
